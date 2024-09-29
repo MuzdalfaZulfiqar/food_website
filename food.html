@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Food</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 1044px)"
+      href="css/phone.css"
+    />
+    <style>
+      /* CSS Reset  */
+
+      @media only screen and (max-width: 833px) {
+        body {
+          /* background-color: red; */
+        }
+        #navBar {
+          flex-direction: column;
+        }
+        #home {
+          height: 449px;
+          flex-direction: column;
+          font-size: 12px;
+        }
+        #home::before {
+          height: 280px;
+        }
+        #home p {
+          font-size: 8px;
+        }
+        .h-primary {
+          font-size: 10px;
+        }
+        #services-container {
+          display: flex;
+          flex-direction: column;
+        }
+        #services .box {
+          display: flex;
+          flex-direction: column;
+        }
+        #services {
+          display: flex;
+          flex-direction: column;
+        }
+        .clients-items {
+          display: flex;
+          flex-direction: column;
+          padding: -10px 12px;
+          margin: -21px 12px;
+        }
+
+        #clients {
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+        }
+        #client-section::before {
+          height: 511px;
+        }
+        
+        #contactUs {
+          padding-left: 10px;
+        }
+      }
+      
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Sofia", sans-serif;
+        /* font-weight: bold; */
+      }
+
+      /* CSS Variables */
+      :root {
+        --navBar-height: 59px;
+      }
+      #navBar {
+      }
+
+      /* Navigation bar */
+      #navBar {
+        position: relative;
+        top: 0px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      #navBar::before {
+        content: "";
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.9;
+      }
+      /* list styling */
+      #navBar ul li {
+        color: wheat;
+        list-style: none;
+        font-size: 1.3rem;
+      }
+      #navBar ul li a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 3px 22px;
+        border-radius: 20px;
+      }
+      #navBar ul li a:hover {
+        color: rgb(5, 4, 4);
+        background-color: white;
+      }
+
+      .ulBar {
+        display: flex;
+      }
+
+      /* Logo styling */
+      #logo {
+        margin: 3px 5px;
+        border-radius: 34px;
+      }
+      #logo img {
+        margin: 3px 5px;
+        height: 76px;
+      }
+      /* Section */
+      #home {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 168px;
+        justify-content: center;
+        align-items: center;
+        height: 510px;
+        color: white;
+        /* font-size: 22px; */
+      }
+      #home.h1 {
+        text-align: center;
+        color: rgb(248, 248, 248);
+        font-size: 1.8rem;
+      }
+      .btn {
+        padding: 5px 20px;
+        margin: 45px;
+        margin: 16px;
+        border: 2px solid rgb(78 62 9);
+        background-color: rgb(255 211 211);
+        font-size: 1.4rem;
+        border-radius: 18px;
+        opacity: 0.8;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background-color: rgb(122, 90, 47);
+      }
+
+      /* utility class */
+      .h-primary {
+        font-size: 2.8rem;
+        padding: 19px;
+      }
+      #home::before {
+        content: "";
+        background: url(img5.jpeg) no-repeat center center/cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        height: 122%;
+        /* width: 157%; */
+        z-index: -1;
+        opacity: 0.89;
+      }
+      .center {
+        text-align: center;
+      }
+      .h-secondary {
+        font-size: 2.8rem;
+        padding: 12px;
+      }
+      .services-container {
+        background-color: bisque;
+        background-color: #ebc9a3;
+        /* background-color: rgb(173, 141, 98);
+            background-color: rgb(224, 217, 148); */
+        /* background-color: rgb(204, 183, 157); */
+        margin: 11px 12px;
+        margin: 12px -1px;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+      #services {
+        margin: 34px;
+        display: flex;
+      }
+      #services .box {
+        border: 2px solid brown;
+        padding: 23px 12px;
+        margin: 23px 12px;
+        border-radius: 27px;
+        background-color: #f9ecd1;
+        opacity: 0.89;
+      }
+      #services .box img {
+        height: 160px;
+        display: block;
+        margin: auto;
+      }
+      footer {
+        background-color: black;
+        color: white;
+        padding: 9px 20px;
+      }
+
+      #contactUs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 34px;
+        padding-right: 200px;
+      }
+      #contactUs input,
+      #contactUs textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 12px;
+        font-size: 1.1rem;
+      }
+      #contactUs form {
+        width: 150%;
+      }
+      #contactUs label {
+        font-size: 1.1rem;
+      }
+
+      #client-section {
+        margin: -34px 0px;
+      }
+      #client-section::before {
+        content: "";
+        position: absolute;
+        height: 510px;
+        width: 100%;
+        background: url(pic2.webp) no-repeat center center/cover;
+        z-index: -1;
+
+        opacity: 0.5;
+      }
+      #clients {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .clients-items {
+        padding: 23px 12px;
+        margin: 24px 12px;
+      }
+
+      #clients img {
+        height: 144px;
+      }
+
+      /* Contact  */
+      #contact {
+        position: relative;
+      }
+
+      #contact {
+        background-color: #e9e8e7;
+        opacity: 0.89;
+        z-index: -1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav id="navBar">
+      <div id="logo">
+        <img src="logo2.png" />
+      </div>
+      <ul class="ulBar">
+        <li class="item"><a href="#">Home</a></li>
+        <li class="item"><a href="#">Services</a></li>
+        <li class="item"><a href="#">About us</a></li>
+        <li class="item"><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    <section id="home">
+      <h1 class="h-primary">Welcome to Retro Pizzeria</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo deserunt
+        odio, optio molestiae reprehenderit
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo deserunt
+      </p>
+      <button class="btn">Order Now</button>
+    </section>
+    <section class="services-container">
+      <h1 class="h-primary center">Our Services</h1>
+      <div id="services">
+        <div class="box">
+          <img src="pizza.jpeg" />
+          <h2 class="h-secondary center">Food Ordering</h2>
+          <p class="center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+            perferendis veniam porro tempora a maiores natus dicta cupiditate,
+            similique magni alias. Soluta ipsam dolorem earum sed repellendus
+          </p>
+        </div>
+        <div class="box">
+          <img src="img3.webp" />
+          <h2 class="h-secondary center">Food Catering</h2>
+          <p class="center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+            perferendis veniam porro tempora a maiores natus dicta cupiditate,
+            similique magni alias. Soluta ipsam dolorem earum sed repellendus
+          </p>
+        </div>
+        <div class="box">
+          <img src="img4.jpeg" />
+          <h2 class="h-secondary center">Bulk Ordering</h2>
+          <p class="center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+            perferendis veniam porro tempora a maiores natus dicta cupiditate,
+            similique magni alias. Soluta ipsam dolorem earum sed repellendus
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="client-section">
+      <h1 class="h-primary center">Our Clients</h1>
+      <div id="clients">
+        <div class="clients-items">
+          <img src="micro.webp" alt="" />
+        </div>
+        <div class="clients-items">
+          <img src="twitter1.png" alt="" />
+        </div>
+        <div class="clients-items">
+          <img src="skype1.webp" alt="" />
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h1 class="h-primary center">Contact Us</h1>
+      <div id="contactUs">
+        <div class="form-group">
+          <form action="">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name: "
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                type="emai"
+                name="name"
+                id="email"
+                placeholder="Enter your email: "
+              />
+            </div>
+            <div class="form-group">
+              <label for="number">Phone Number:</label>
+              <input
+                type="number"
+                name="number"
+                id="number"
+                placeholder="Enter your phone number: "
+              />
+            </div>
+            <div class="form-group">
+              <label for="name">Message:</label>
+              <textarea name="message" id="msg" cols="20" rows="4">
+Your reviews</textarea
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="center">
+        Copyright &copy www.myRetroPizzeria.com. All rights reserved
+      </div>
+    </footer>
+  </body>
+</html>

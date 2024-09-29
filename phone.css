@@ -1,0 +1,26 @@
+
+
+body{
+
+    background-color: red !important;
+    color: aqua !important; }
+#navBar{
+    flex-direction: column;
+
+}
+#home{
+    height: 280px;
+}
+#home::before{
+    height: 0px;
+}
+#services .box{
+    flex-direction: column;
+}
+#clients{
+    overflow: hidden;
+
+}
+#contactUs{
+
+}
